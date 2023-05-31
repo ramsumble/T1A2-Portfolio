@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+//  mixin for sidebar & portrait
+@import './components/sidebar';
+@import './components/portrait_container';
+@import './components/blog_sizing';
+@import './components/top-center-titles';
+@import './components/mobile';
+
+
+body .background {
+    background: linear-gradient(to top, rgb(222, 247, 222) 0%, rgb(206, 219, 206) 30%, #ececee 100% );
+}
+
+body p {
+    font-family:  Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer {
+    margin-left: 18vw;
+    padding: 3%;
+    border-top: 1px solid rgb(182, 181, 181);
+    @include margin-left-none
+}
+
+// landing content for home.html
+
+// need to specify margin left for the static sidebar (i think)
+
+.landing-container {
+    margin-left: 20vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row-reverse;
+    @include home-page-mobile;
+}
+
+.landing-container .landing-info {
+    width: 50%;
+}
+
+.landing-info h1 {
+    padding: 1%;
+    border-bottom: 1px solid rgb(182, 181, 181);
+}
+
+.landing-info p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 4%;
+    line-height: 2rem;
+}
+
+.landing-info aside {
+    width: 40%;
+    float: left;
+    font-style: italic;
+    background-color: lightgray;
+}
+
+.landing-image {
+    width: 80%;
+    margin-top: 25%;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+// About layout
+
+.summary-container {
+    margin-left: 22vw;
+    @include margin-left-none;
+}
+
+.summary-content .summary-info {
+    width: 50%;
+}
+
+.career-images {
+    width: 50%;
+    border: 1px solid black;
+}
+
+.career-images img{
+    width: 100%;
+}
+
+.about-title {
+    padding: 10%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    @include Blog-post-for-mobile;
+}
+
+.intro-content {
+    margin-top: 80px;
+    line-height: 2rem;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    border-bottom: 1px solid rgb(182, 181, 181);
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 10%;
+    margin-right: 5%;
+    line-height: 2rem;
+    @include About-page-mobile;
+}
+
+.summary-content:not(:last-child) {
+    border-bottom: 1px solid rgb(182, 181, 181);
+}
+
+.summary-info h4{
+    @include top-center-text;
+}
+
+.summary-info p {
+    @include top-center-text;
+}
+
+// blog layout
+
+.blogs-container {
+    margin-left: 22vw;
+    @include Adjust-for-mobile;
+}
+
+.blog-info {
+    padding: 4%;
+}
+
+.blogs-container h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+}
+
+.blog-info h3{
+    @include top-center-text;
+    margin-bottom: 3%;
+}
+
+// need to fix clickable link to only be for image and not whole area
+.blog-info img{
+    @include blog_images;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.blog-info p{
+    @include center-text;
+    padding: 2%;
+    font-weight: 300;
+}
+
+.blog-info .date {
+    border-bottom:  1px solid rgb(182, 181, 181);
+}
+
+// contacts page
+
+.contact-container {
+    margin-left: 18vw;
+    height: 100vh;
+    @include Adjust-for-mobile;
+}
+
+.contact-container h1 {
+    @include center-text;
+    padding-top: 10%;
+}
+
+.contact-info {
+    border-bottom: 1px solid rgb(182, 181, 181);
+}
+
+.contact-info p {
+    padding-top: 8%;
+    padding-bottom: 4%;
+    @include center-text;
+    border-bottom: 1px solid rgb(182, 181, 181);
+}
+
+.contact-info h3 {
+    padding-top: 1%;
+    padding-bottom: 2%;
+    @include center-text;
+}
+
+.contact-info li {
+    padding: 1%;
+    @include center-text;
+}
+
+// list of blogs / blog collections page
+
+.blog-images {
+    width: 80%;
+    border: 1px solid black;
+}
+
+.blog-images img{
+    width: 50%
+}
+
+.blog-content {
+    display: flex;
+    flex-direction: row-reverse;
+    line-height: 2rem;
+    padding: 10%;
+    @include Blog-post-for-mobile;
+}
+
+// border overlaps with the footer border 
+
+.blog-content:not(:last-child) {
+    border-bottom: 1px solid rgb(182, 181, 181);
+}
+

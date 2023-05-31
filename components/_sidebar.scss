@@ -1,0 +1,49 @@
+@import './mobile';
+
+.header-container {
+    width: 20vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    border-right: 1px solid grey;
+    border-bottom-right-radius: 40%;
+    border-top-right-radius: 40%;
+    background: linear-gradient(to top, rgb(222, 247, 222) 0%, rgb(206, 219, 206) 30%, #ececee 100% );
+    justify-content: space-around;
+    @include header-container-mobile();
+}
+
+.header-buttons{
+    list-style-type: none;
+    // margin-right: 20%;
+    padding: 60px;
+    @include mobile-header();
+} 
+
+.header-buttons a {
+    text-decoration: none;
+    color: rgb(22, 22, 22);
+    font-weight: 400;
+}
+
+.header-buttons li {
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 45%;
+    border: 1px solid rgb(88, 87, 87);
+    text-align: center;    
+    background-image: linear-gradient(to right, #d6d4d4 0%, #e6e1e1 50%, #f1eeee 50%, #cfcfcf 100%);
+    background-position: 100%;
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease;
+    @include mobile-header-buttons-li();
+}
+
+.header-buttons li:hover {
+    background-color: #e4dddd;
+    transition: 0.5s ease;
+    background-position: 0%;
+}
+
+
+
