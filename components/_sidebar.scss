@@ -39,7 +39,7 @@
     @include mobile-header-buttons-li();
 }
 
-.header-buttons li:hover {
+.header-buttons li:hover { 
     background-color: #e4dddd;
     transition: 0.5s ease;
     background-position: 0%;

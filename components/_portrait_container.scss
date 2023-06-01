@@ -29,8 +29,7 @@
     align-items: center;
     background-image: url('assets/me.jpg');
     background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; // set the image to fit portrait container
 }
 
 .portrait-container:hover {

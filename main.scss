@@ -14,7 +14,8 @@
 
 
 body .background {
-    background: linear-gradient(to top, rgb(222, 247, 222) 0%, rgb(206, 219, 206) 30%, #ececee 100% );
+    background: linear-gradient(to top, rgb(222, 247, 222) 0%, rgb(206, 219, 206) 30%, #dfe9e4 100% );
+    // background: linear-gradient(to top, rgb(160 199 234) 0%, rgb(134 187 236) 30%, #c7d4f1 100%); //couldnt get the blue to work 
 }
 
 body p {
@@ -34,22 +35,31 @@ footer {
 
 .landing-container {
     margin-left: 20vw;
+    margin-right: 50px;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; //flip the display for image and text
     @include home-page-mobile;
 }
 
 .landing-container .landing-info {
     width: 50%;
+    background: linear-gradient(to top, rgb(222, 247, 222) 0%, rgb(206, 219, 206) 30%, #dff1e4 100% );
+    // background: linear-gradient(to top, rgb(160 199 234) 0%, rgb(134 187 236) 30%, #c7d4f1 100%);
+    border-radius: 8px;    
+    border: 1px solid rgb(62, 83, 71);
+    box-shadow: 0 0 4px rgb(135, 168, 142, 0.5); // give a bit more depth to the home page with shadows
 }
 
 .landing-info h1 {
-    padding: 1%;
-    border-bottom: 1px solid rgb(182, 181, 181);
+    padding: 2%;
+    border-bottom: 1px solid rgb(182, 181, 181); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .landing-info p {
@@ -65,6 +75,8 @@ footer {
     float: left;
     font-style: italic;
     background-color: lightgray;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);;
 }
 
 .landing-image {
@@ -152,6 +164,7 @@ footer {
 .blog-info h3{
     @include top-center-text;
     margin-bottom: 3%;
+    // font-size: 20px
 }
 
 // need to fix clickable link to only be for image and not whole area
@@ -165,10 +178,15 @@ footer {
     border: 1px solid black;
 }
 
+.blog-info img:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
 .blog-info p{
     @include center-text;
     padding: 2%;
     font-weight: 300;
+    font-size: 20px;
 }
 
 .blog-info .date {
@@ -197,6 +215,7 @@ footer {
     padding-bottom: 4%;
     @include center-text;
     border-bottom: 1px solid rgb(182, 181, 181);
+    font-size: 20px;
 }
 
 .contact-info h3 {
@@ -205,12 +224,34 @@ footer {
     @include center-text;
 }
 
+.contact-info ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .contact-info li {
-    padding: 1%;
+    padding-top: 5%;
     @include center-text;
 }
 
+.contact-social-icon img{
+    width: 100px;
+    height: 100px;
+    @include contact-mobile-icons;
+    border-radius: 55%;
+}
+
+.contact-social-icon img:hover{
+    // filter:invert(100); //github invert doesnt suit
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);;
+}
+
 // list of blogs / blog collections page
+
+.blog-post-container {
+    margin-left: 18vw;
+}
 
 .blog-images {
     width: 80%;
@@ -229,9 +270,7 @@ footer {
     @include Blog-post-for-mobile;
 }
 
-// border overlaps with the footer border 
-
 .blog-content:not(:last-child) {
-    border-bottom: 1px solid rgb(182, 181, 181);
+    border-bottom: 1px solid rgb(182, 181, 181); // border overlaps with the footer border 
 }
 
