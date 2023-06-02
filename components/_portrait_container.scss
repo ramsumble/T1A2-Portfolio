@@ -1,6 +1,7 @@
 @import './mobile';
 
-@mixin portrait-container {
+//this was the first thing I created and have learned a lot since please be nice :( 
+@mixin portrait-container {  //not sure why I made this a mixin but here we are
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -12,37 +13,27 @@
     @include hide-for-mobile()
 }
 
-@mixin portrait-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.my-image {
-    @include portrait-image()
-}
-
-.portrait-container {
-    @include portrait-container;
+.portrait-container { //positioning and styling for my portrait 
+    @include portrait-container; 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('assets/me.jpg');
+    background-image: url('assets/me.jpg'); //include image and set it as the background
     background-position: top;
-    background-size: cover; // set the image to fit portrait container
+    background-size: cover; // set the image to fit portrait container 
 }
 
-.portrait-container:hover {
+.portrait-container:hover { // slightly grey portrait
     transition: filter 0.6s ease;
     filter: grayscale(40%);
 }
 
-.portrait-container:hover .hoverable {
+.portrait-container:hover .hoverable { // mouseover for my social icons to appear
     transition: opacity 1s ease;
     opacity: 1;
 }
 
-.social-icon {
+.social-icon { //positioning for social icons + make their opacity 0 to hide them
     img {
         width: 100%;
     }

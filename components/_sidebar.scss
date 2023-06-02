@@ -1,32 +1,33 @@
 @import './mobile';
 
-.header-container {
+//seperate area for sidebar contents 
+
+.header-container { //sizing and fixing he position of the sidebar, keeping it in view but allowing the rest of the page to be scrollable if possible
     width: 20vw;
     height: 100vh;
     position: fixed;
     display: flex;
     border-right: 1px solid grey;
-    border-bottom-right-radius: 40%;
+    border-bottom-right-radius: 40%; //adding some curvature to break up the boxie-ness of the page
     border-top-right-radius: 40%;
-    background: linear-gradient(to top, rgb(222, 247, 222) 0%, rgb(206, 219, 206) 30%, #ececee 100% );
+    background: linear-gradient(to top, rgb(222, 247, 222) 0%, rgb(206, 219, 206) 30%, #ececee 100% ); //keep background same as other pages
     justify-content: space-around;
     @include header-container-mobile();
 }
 
-.header-buttons{
+.header-buttons{ //positioning + removed style for list
     list-style-type: none;
-    // margin-right: 20%;
     padding: 60px;
     @include mobile-header();
 } 
 
-.header-buttons a {
+.header-buttons a { //text size,colour and remove underline
     text-decoration: none;
     color: rgb(22, 22, 22);
     font-weight: 400;
 }
 
-.header-buttons li {
+.header-buttons li { //creating the buttons, sizing, colour and positioning etc
     padding: 8px;
     border-radius: 8px;
     margin-top: 45%;
@@ -34,12 +35,11 @@
     text-align: center;    
     background-image: linear-gradient(to right, #d6d4d4 0%, #e6e1e1 50%, #f1eeee 50%, #cfcfcf 100%);
     background-position: 100%;
-    background-size: 200% 100%;
-    transition: background-position 0.3s ease;
+    background-size: 200% 100%; //gradual colouring from left to right
     @include mobile-header-buttons-li();
 }
 
-.header-buttons li:hover { 
+.header-buttons li:hover { //mouseover effect for the buttons
     background-color: #e4dddd;
     transition: 0.5s ease;
     background-position: 0%;

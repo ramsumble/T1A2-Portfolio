@@ -1,11 +1,11 @@
-* {
+* { //default values across the website
     margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
 }
 
-//  mixin for sidebar & portrait
+//  importing mixins
 @import './components/sidebar';
 @import './components/portrait_container';
 @import './components/blog_sizing';
@@ -13,17 +13,17 @@
 @import './components/mobile';
 
 
-body .background {
+body .background { //apply background gradiant to whole page
     background: linear-gradient(to top, rgb(222, 247, 222) 0%, rgb(206, 219, 206) 30%, #dfe9e4 100% );
     // background: linear-gradient(to top, rgb(160 199 234) 0%, rgb(134 187 236) 30%, #c7d4f1 100%); //couldnt get the blue to work 
 }
 
-body p {
+body p { //styling for p tag everywhere
     font-family:  Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
 }
 
-footer {
+footer { //footer spacing 
     margin-left: 18vw;
     padding: 3%;
     border-top: 1px solid rgb(182, 181, 181);
@@ -34,7 +34,7 @@ footer {
 
 // need to specify margin left for the static sidebar (i think)
 
-.landing-container {
+.landing-container { // alighment for homepage contents
     margin-left: 20vw;
     margin-right: 50px;
     height: 100vh;
@@ -46,7 +46,7 @@ footer {
     @include home-page-mobile;
 }
 
-.landing-container .landing-info {
+.landing-container .landing-info { //sizing for contents + varying background for a bit of depth
     width: 50%;
     background: linear-gradient(to top, rgb(222, 247, 222) 0%, rgb(206, 219, 206) 30%, #dff1e4 100% );
     // background: linear-gradient(to top, rgb(160 199 234) 0%, rgb(134 187 236) 30%, #c7d4f1 100%);
@@ -55,7 +55,7 @@ footer {
     box-shadow: 0 0 4px rgb(135, 168, 142, 0.5); // give a bit more depth to the home page with shadows
 }
 
-.landing-info h1 {
+.landing-info h1 { // styling header on homepage + spacing
     padding: 2%;
     border-bottom: 1px solid rgb(182, 181, 181); 
     display: flex;
@@ -63,7 +63,7 @@ footer {
     align-items: center;
 }
 
-.landing-info p {
+.landing-info p { //spacing for text
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -71,7 +71,7 @@ footer {
     line-height: 2rem;
 }
 
-.landing-info aside {
+.landing-info aside { //spacing and styling for aside element
     width: 40%;
     float: left;
     font-style: italic;
@@ -80,7 +80,7 @@ footer {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);;
 }
 
-.landing-image {
+.landing-image { //attempt to have the landing image fit better 
     width: 80%;
     margin-top: 25%;
     border-radius: 4px;
@@ -89,25 +89,21 @@ footer {
 
 // About layout
 
-.summary-container {
+.summary-container { //spacing for the About page layout - left bar is static on scrollable pages
     margin-left: 22vw;
-    @include margin-left-none;
+    @include margin-left-none;  
 }
 
-.summary-content .summary-info {
+.summary-content .summary-info {  //have the info use 50% of the space
     width: 50%;
 }
 
-.career-images {
+.career-images { //have the image reduced by 50%
     width: 50%;
     border: 1px solid black;
 }
 
-.career-images img{
-    width: 100%;
-}
-
-.about-title {
+.about-title { //styling for h1/title
     padding: 10%;
     margin-left: 10%;
     display: flex;
@@ -115,7 +111,7 @@ footer {
     @include Blog-post-for-mobile;
 }
 
-.intro-content {
+.intro-content {  //spacing for text container atop the page
     margin-top: 80px;
     line-height: 2rem;
     padding-right: 5%;
@@ -123,7 +119,7 @@ footer {
     border-bottom: 1px solid rgb(182, 181, 181);
 }
 
-.summary-content {
+.summary-content { //spacing and positioning for image and text 
     display: flex;
     flex-direction: row-reverse;
     margin-top: 10%;
@@ -132,44 +128,45 @@ footer {
     @include About-page-mobile;
 }
 
-.summary-content:not(:last-child) {
+.summary-content:not(:last-child) { //dont include a bottom border for last child (it overlaps with the border from the footer)
     border-bottom: 1px solid rgb(182, 181, 181);
 }
 
-.summary-info h4{
+.summary-info h4{ //spacing and positioning for h4
     @include top-center-text;
 }
 
-.summary-info p {
+.summary-info p { //spacing and positioning for p
     @include top-center-text;
 }
 
 // blog layout
 
-.blogs-container {
+.blogs-container { //margin for contents
     margin-left: 22vw;
     @include Adjust-for-mobile;
 }
 
-.blog-info {
+.blog-info { // padding to create space between and tighten the images
     padding: 4%;
 }
 
-.blogs-container h1 {
+.blogs-container h1 { //spacing and positioning 
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 10%;
 }
 
-.blog-info h3{
+.blog-info h3{ //spacing and positioing for h3
     @include top-center-text;
     margin-bottom: 3%;
     // font-size: 20px
 }
 
-// need to fix clickable link to only be for image and not whole area
-.blog-info img{
+// note to self: need to fix clickable link to only be for image and not whole area :( 
+
+.blog-info img{ //sizing for blog images + positioning 
     @include blog_images;
     display: flex;
     margin-left: auto;
@@ -179,91 +176,79 @@ footer {
     border: 1px solid black;
 }
 
-.blog-info img:hover {
+.blog-info img:hover { //create shadow effect on mouseover for images
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3); 
 }
 
-.blog-info p{
+.blog-info p{ //spacing + positioning for p
     @include center-text;
     padding: 2%;
     font-weight: 300;
-    font-size: 20px;
 }
 
-.blog-info .date {
+.blog-info .date { //boder between containers udner the date
     border-bottom:  1px solid rgb(182, 181, 181);
 }
 
 // contacts page
 
-.contact-container {
+.contact-container { //spacing content away from fixed sidebar
     margin-left: 18vw;
     height: 100vh;
     @include Adjust-for-mobile;
 }
 
-.contact-container h1 {
+.contact-container h1 { //positioning and padding for h1
     @include center-text;
     padding-top: 10%;
 }
 
-.contact-info {
+.contact-info { //simple border to frame cntent
     border-bottom: 1px solid rgb(182, 181, 181);
 }
 
-.contact-info p {
+.contact-info p { //more positioning and spacing
     padding-top: 8%;
     padding-bottom: 4%;
     @include center-text;
     border-bottom: 1px solid rgb(182, 181, 181);
-    font-size: 20px;
 }
 
-.contact-info h3 {
-    padding-top: 1%;
-    padding-bottom: 2%;
-    @include center-text;
-}
-
-.contact-info ul {
+.contact-info ul { //position images apart 
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.contact-info li {
+.contact-info li { //more positioning 
     padding-top: 5%;
     @include center-text;
 }
 
-.contact-social-icon img{
+.contact-social-icon img{ //sizing + border radius needed for mouseover shadows
     width: 100px;
     height: 100px;
     @include contact-mobile-icons;
     border-radius: 55%;
 }
 
-.contact-social-icon img:hover{
+.contact-social-icon img:hover{ //mouse over shadows for images
     // filter:invert(100); //github invert doesnt suit
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);;
 }
 
 // list of blogs / blog collections page
 
-.blog-post-container {
+.blog-post-container { //position content away from static sidebar
     margin-left: 18vw;
 }
 
-.blog-images {
+.blog-images { //sizing and border
     width: 80%;
     border: 1px solid black;
 }
 
-.blog-images img{
-    width: 50%
-}
-
-.blog-content {
+.blog-content { //positioning and spacing 
     display: flex;
     flex-direction: row-reverse;
     line-height: 2rem;
@@ -271,7 +256,7 @@ footer {
     @include Blog-post-for-mobile;
 }
 
-.blog-content:not(:last-child) {
+.blog-content:not(:last-child) { //dont include last child with a boarder (overlaps with footer)
     border-bottom: 1px solid rgb(182, 181, 181); // border overlaps with the footer border 
 }
 

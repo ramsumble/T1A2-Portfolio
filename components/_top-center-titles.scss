@@ -1,11 +1,11 @@
-@mixin top-center-text {
+@mixin top-center-text {  //positioning and add margin for relevant components
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10%;
 }
 
-@mixin center-text {
+@mixin center-text { // mixin to centralize 
     display: flex;
     justify-content: center;
     align-items: center;

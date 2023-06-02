@@ -1,21 +1,18 @@
-// applied to sidebar to disappear for mobile usage
-
-@mixin hide-for-mobile {
+@mixin hide-for-mobile {  // applied to sidebar to disappear for mobile usage
     @media (max-width: 768px) {
         display: none;
     }
 }
 
-// remove the margin for containers 
-
-@mixin margin-left-none {
+@mixin margin-left-none { // remove the margin for containers 
     @media (max-width: 768px) {
         margin-left: 0%;
         padding: 10%;
     }
 }
 
-// mixin for top narbar
+
+// header for mobile - ran out of time to be creative :( 
 
 @mixin header-container-mobile {
     @media (max-width: 768px) {
@@ -24,14 +21,14 @@
         height: auto;
         position: relative;
         border-radius: 0;
-        border: none;  //remove the border lines from desktop view
+        border: none;  //remove the border lines for mobile view
         border-bottom: 1px solid rgb(196, 194, 194);
         display: block;
-        background: linear-gradient(to top, rgb(215, 230, 215) 0%, rgb(206, 219, 206) 30%, #dff1e4 100% );
+        background: linear-gradient(to top, rgb(215, 230, 215) 0%, rgb(206, 219, 206) 30%, #dff1e4 100% );  //reuse background color 
     }
 }
 
-@mixin mobile-header-buttons-li {
+@mixin mobile-header-buttons-li { //button spacing and position
     @media (max-width: 768px) {
         display: block;
         padding: 15px;
@@ -39,23 +36,22 @@
     }
 }
 
-@mixin mobile-header {
+@mixin mobile-header { //spacing for mobile header
     @media (max-width: 768px) {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         border-radius: 8px;
         // background-color: #3776ab;
-
     }
 }
 
 // Homepage 
 
-@mixin home-page-mobile {
+@mixin home-page-mobile { //resizing for homepage, centralized the contents of the page
     @media (max-width: 768px) {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column; //changed the orientation from row to column so content isnt to squished
         margin: auto;
         height: 100%;
         padding-bottom: 10%;
@@ -75,10 +71,10 @@
 
 // About Page
 
-@mixin About-page-mobile {
+@mixin About-page-mobile {  //more centering
     @media (max-width: 768px) {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; //changed the orientation from row to column so content isnt to squished
         margin-left: auto;
         margin-right: auto;
         align-items: center;
@@ -88,14 +84,14 @@
 
 // Blogs and Contact page correction for mobile
 
-@mixin Adjust-for-mobile {
+@mixin Adjust-for-mobile { //centralize content
     @media (max-width: 768px) {
         margin-left: auto;
         margin-right: auto;
     }
 }
 
-@mixin Blog-post-for-mobile {
+@mixin Blog-post-for-mobile { //change orientation and correct the margin left
     @media (max-width: 768px) {
         display: flex;
         flex-direction: column;
@@ -106,7 +102,7 @@
 
 // contacts page
 
-@mixin contact-mobile-icons {
+@mixin contact-mobile-icons {  //sizing for mobile view
     @media (max-width: 768px) {
         width: 50px;
         height: 50px;
