@@ -53,6 +53,7 @@ footer { //footer spacing
     border-radius: 8px;    
     border: 1px solid rgb(62, 83, 71);
     box-shadow: 0 0 4px rgb(135, 168, 142, 0.5); // give a bit more depth to the home page with shadows
+    @include mobile-width;
 }
 
 .landing-info h1 { // styling header on homepage + spacing
@@ -96,6 +97,7 @@ footer { //footer spacing
 
 .summary-content .summary-info {  //have the info use 50% of the space
     width: 50%;
+    @include mobile-width;
 }
 
 .career-images { //have the image reduced by 50%
@@ -196,6 +198,7 @@ footer { //footer spacing
     margin-left: 18vw;
     height: 100vh;
     @include Adjust-for-mobile;
+    @include margin-left-none;
 }
 
 .contact-container h1 { //positioning and padding for h1
@@ -241,6 +244,8 @@ footer { //footer spacing
 
 .blog-post-container { //position content away from static sidebar
     margin-left: 18vw;
+    @include margin-left-none;
+    @include mobile-width;
 }
 
 .blog-images { //sizing and border

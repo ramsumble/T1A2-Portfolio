@@ -11,6 +11,11 @@
     }
 }
 
+@mixin mobile-width { // change the veiw width for mobile
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
 
 // header for mobile - ran out of time to be creative :( 
 
@@ -42,6 +47,7 @@
         flex-direction: row;
         justify-content: space-between;
         border-radius: 8px;
+        padding: 0;
         // background-color: #3776ab;
     }
 }
@@ -56,7 +62,7 @@
         height: 100%;
         padding-bottom: 10%;
             .image-container img {
-                width: 50%;
+                width: 100%;
             }
             .landing-info {
                 margin-top: 20%;
@@ -67,7 +73,6 @@
             }
     }
 }
-
 
 // About Page
 
